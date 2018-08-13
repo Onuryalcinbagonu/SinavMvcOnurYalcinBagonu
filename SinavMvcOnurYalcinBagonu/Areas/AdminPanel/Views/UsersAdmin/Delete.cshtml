@@ -1,0 +1,51 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.User
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Sil</h2>
+
+<h3>Simek İsteğinizden Emin Misiniz?</h3>
+
+<div>
+    <h4>Kullanıcı</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Register_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Register_Date)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Kaydet", "Index")
+        </div>
+    }
+</div>

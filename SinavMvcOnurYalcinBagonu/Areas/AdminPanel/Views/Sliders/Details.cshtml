@@ -1,0 +1,36 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.Slider
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Detay</h2>
+
+<div>
+    <h4>Sliders</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+
+        <dd>
+            <img src="@Model.ImageUrl" width="100" />
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisterDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisterDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Güncelle", "Edit", new { id = Model.SliderId }) |
+          @Html.ActionLink("Geri Gel", "Index")
+</p>

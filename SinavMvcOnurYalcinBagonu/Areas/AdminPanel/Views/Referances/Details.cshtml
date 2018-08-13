@@ -1,0 +1,43 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.Referances
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Referans Detay</h2>
+
+<div>
+    <h4>Referans</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="@Model.Image" width="100" height="100" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RefName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RefName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.RefId }) |
+    @Html.ActionLink("Geri Gel", "Index")
+</p>

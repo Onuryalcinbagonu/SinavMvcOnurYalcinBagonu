@@ -1,0 +1,54 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.YenFooter
+
+<div class="top-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="social">
+                    <ul class="social-share">
+
+
+                        @foreach (var item in Model.Footer)
+                        {
+                            if (item.SocialMediaActive == true)
+                            {
+
+                                <li><a href="@item.FacebookUrl" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="@item.TwiterUrl" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="@item.SkypeUrl"><i class="fa fa-skype"></i></a></li>
+                            }
+                            else
+                            {
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            }
+
+                        }
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!--/.container-->
+</div><!--/#footer-->
+<footer id="footer" class="midnight-blue">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                © Gp Theme. All Rights Reserved.
+                <div class="credits">
+                    <!--
+                      All the links in the footer should remain intact.
+                      You can delete the links only if you purchased the pro version.
+                      Licensing information: https://bootstrapmade.com/license/
+                      Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Gp
+                    -->
+                    <a href="https://bootstrapmade.com/">Bootstrap Templates</a> by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,52 @@
+﻿@{
+    string pageName = HttpContext.Current.Request.RawUrl;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gp Bootstrap Template</title>
+
+    <!-- Bootstrap -->
+    <link href="/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Content/css/font-awesome.min.css">
+    <link href="/Content/css/animate.min.css" rel="stylesheet">
+    <link href="/Content/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/Content/css/style.css" rel="stylesheet">
+    <link href="/Content/css/responsive.css" rel="stylesheet">
+    <!-- =======================================================
+        Theme Name: Gp
+        Theme URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-templat/
+        Author: BootstrapMade
+        Author URL: https://bootstrapmade.com
+    ======================================================= -->
+
+</head>
+<body class="homepage">
+    @{
+        Html.RenderAction("ListHeader", "Home");
+    }<!--/header-->
+
+    @if (pageName == "/" || pageName == "Index" || pageName == "/Home/Index")
+    {
+
+        Html.RenderAction("ListSlider", "Home");
+
+    }
+    @RenderBody()
+    @{
+        Html.RenderAction("ListFooter", "Home");
+    }
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/Scripts/js/jquery.js"></script>
+    <script src="~/Scripts/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/js/jquery.prettyPhoto.js"></script>
+    <script src="~/Scripts/js/jquery.isotope.min.js"></script>
+    <script src="~/Scripts/js/wow.min.js"></script>
+    <script src="~/Scripts/js/main.js"></script>
+
+</body>
+</html>

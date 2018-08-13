@@ -1,0 +1,64 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.Footer
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Alt Banner Ekle</h2>
+<h3>Lütfen Linklerin http ile Başlamasına Dikkat Ediniz Aksi Halde Kayıt İşlemi <b style="color:red;">Gerçekleşmez!!!</b></h3>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Alt Banner</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.SocialMediaActive, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div>
+                    @Html.ValidationMessageFor(model => model.SocialMediaActive, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.SocialMediaActive)
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacebookUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.FacebookUrl, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.FacebookUrl, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TwiterUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.TwiterUrl, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.TwiterUrl, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SkypeUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.SkypeUrl, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.SkypeUrl, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Kaydet" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Geri Gel", "Index")
+
+</div>

@@ -1,0 +1,42 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.About
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımızda Sil</h2>
+<h3>Silmek İstemekten Emin Misin?</h3>
+
+<div>
+    <h4>Hakkımızda Sil</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AboutTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AboutTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Description.Replace("<br/>",Environment.NewLine)) <!--alt satıra geçir br gördüğünde-->
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Geri Gel", "Index")
+        </div>
+    }
+</div>

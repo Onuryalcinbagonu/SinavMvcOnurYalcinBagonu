@@ -1,0 +1,60 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.Home
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Ana Sayfa Detay</h2>
+
+<div>
+    <h4>Ana Sayfa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LogoImgUrl)
+        </dt>
+
+        <dd>
+            <img src="@Model.LogoImgUrl" width="100" height="100" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionOneTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionOneTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionOne)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.DescriptionOne.Replace("<br/>", Environment.NewLine))
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionTwoTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionTwoTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionTwo)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.DescriptionTwo.Replace("<br/>", Environment.NewLine))
+
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.HomeId }) |
+    @Html.ActionLink("Geri Gel", "Index")
+</p>

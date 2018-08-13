@@ -1,0 +1,149 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.User
+
+@{
+    ViewBag.Title = "Index";
+    string a = ViewBag.value;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Onur Panel Giriş</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/Areas/AdminPanel/Content/Input/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Areas/AdminPanel/Content/Input/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Areas/AdminPanel/Content/Input/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Areas/AdminPanel/Content/Input/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Areas/AdminPanel/Content/Input/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Areas/AdminPanel/Content/Input/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Areas/AdminPanel/Content/Input/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Areas/AdminPanel/Content/Input/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Areas/AdminPanel/Content/Input/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/Areas/AdminPanel/Content/Input/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/AdminPanel/Content/Input/css/main.css">
+    <!--===============================================================================================-->
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="limiter">
+            <div class="container-login100">
+                <div class="wrap-login100">
+                    <form class="login100-form validate-form">
+                        <span class="login100-form-title p-b-26">
+                            Hoş Geldiniz
+                        </span>
+                        <span class="login100-form-title p-b-48">
+
+
+
+
+
+                        </span>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })   <br />
+
+                        <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+                            <input class="input100" type="email" name="User_Email" required="true" MaxLength="45">
+                            <span class="focus-input100" data-placeholder="E-mail"></span>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.User_Email, "", new { @class = "text-danger" })
+
+                        <div class="wrap-input100 validate-input" data-validate="Enter password">
+                            <span class="btn-show-pass">
+                                <i class="zmdi zmdi-eye"></i>
+                            </span>
+                            <input class="input100" type="password" name="Password" required="true" MaxLength="16">
+                            <span class="focus-input100" data-placeholder="Şifre"></span>
+
+                        </div>
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                        <div class="container-login100-form-btn">
+                            <div class="wrap-login100-form-btn">
+                                <div class="login100-form-bgbtn"></div>
+                                <button type="submit" class="login100-form-btn">
+                                    Giriş
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="text-center p-t-115">
+                            <a class="txt2" href="@Url.Action("PasswordNull","Users")">
+                                Şifremi Unuttum
+                            </a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div id="dropDownSelect1"></div>
+    }
+    <!--===============================================================================================-->
+    <script src="~/Areas/AdminPanel/Content/Input/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Areas/AdminPanel/Content/Input/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Areas/AdminPanel/Content/Input/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/Areas/AdminPanel/Content/Input/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Areas/AdminPanel/Content/Input/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Areas/AdminPanel/Content/Input/vendor/daterangepicker/moment.min.js"></script>
+    <script src="~/Areas/AdminPanel/Content/Input/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Areas/AdminPanel/Content/Input/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Areas/AdminPanel/Content/Input/js/main.js"></script>
+
+</body>
+</html>
+
+
+
+
+@*<body>
+
+
+            <div class="form-horizontal">
+                <h4>User</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.User_Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.User_Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.User_Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+            </div>
+        }
+
+
+    </body>
+    </html>*@

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<SinavMvcOnurYalcinBagonu.Models.Contact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+    <div class="panel-heading">
+
+        <button type="button" class="btn btn_5 btn-lg btn-warning warning_11">İletişim</button>
+
+        @if (Model.Count() < 1)
+    {<button type="button" class="btn btn_5 btn-lg btn-default">
+    @Html.ActionLink("Yeni Ekle", "Create")
+</button>  }
+
+
+    <div class="panel-ctrls" data-actions-container="" data-action-collapse="{&quot;target&quot;: &quot;.panel-body&quot;}"><span class="button-icon has-bg"><i class="ti ti-angle-down"></i></span></div>
+    </div>
+    <div class="panel-body no-padding" style="display: block;">
+        <table class="table table-striped">
+            <thead>
+                <tr class="warning">
+                    <th>       @Html.DisplayNameFor(model => model.EmbedCode)</th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Adress)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tel)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.Raw(item.EmbedCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tel)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Düzenle", "Edit", new { id = item.ContactId }) |
+                        @Html.ActionLink("Detay", "Details", new { id = item.ContactId }) |
+                        @Html.ActionLink("Sil", "Delete", new { id = item.ContactId })
+                    </td>
+                </tr>
+                 
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+

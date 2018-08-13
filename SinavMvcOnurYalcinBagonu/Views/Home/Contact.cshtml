@@ -1,0 +1,23 @@
+﻿@model  SinavMvcOnurYalcinBagonu.Models.Contact
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="map">
+      
+<p class="lead" align="center">@Html.Raw(Model.EmbedCode)  </p>
+      
+</div>
+<section id="contact-page">
+    <div class="container">
+        <div class="center">
+            <h2>İletişim Adreslerimiz</h2>
+         
+                <p class="lead"><b>ADRES:</b>@Model.Adress</p>
+                <p class="lead"><b>TEL:</b>@Model.Tel</p>
+                <p class="lead"><a href="mailto:@Model.Email"></a></p>
+        </div>
+        <!--/.row-->
+    </div><!--/.container-->
+</section>

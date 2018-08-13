@@ -1,0 +1,51 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.Contact
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>İletişim Detay</h2>
+
+<div>
+    <h4>İletişim</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmbedCode)
+        </dt>
+
+        <dd>
+          @Html.Raw(Model.EmbedCode)      </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.ContactId }) |
+    @Html.ActionLink("Geri Gel", "Index")
+
+</p>

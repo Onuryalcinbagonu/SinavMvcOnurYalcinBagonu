@@ -1,0 +1,37 @@
+﻿@{
+    var logo = new SinavMvcOnurYalcinBagonu.Models.Onur_DbEntities().Home.ToList();
+}
+<header id="header">
+    <nav class="navbar navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+              
+    @foreach (var item in logo)
+    {  <a class="navbar-brand" href="@Url.Action("Index")">
+                    <img src="@item.LogoImgUrl" width="60" height="60" />
+                </a>
+    }
+                
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="@Url.Action("Index","Home")">Ana Sayfa</a></li>
+                    <li class="active"><a href="@Url.Action("About")">Hakkımızda</a></li>
+                    <li class="active"><a href="@Url.Action("Referance")">Referanslar</a></li>
+                    <li class="active"><a href="@Url.Action("Galery")">Galeri</a></li>
+                    <li class="active"><a href="@Url.Action(" Contact")">İletişim</a></li>
+                    <li class="active"><b> || </b><a href="@Url.Action("Index","Users","AdminPanel")">Kullanıcı Giriş</a></li>
+
+                </ul>
+            </div>
+        </div><!--/.container-->
+    </nav><!--/nav-->
+
+</header>

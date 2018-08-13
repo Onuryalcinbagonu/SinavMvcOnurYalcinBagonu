@@ -1,0 +1,57 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.Contact
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>İletişim Sil</h2>
+
+<h3>Silmek İstemekten Emin Misin?</h3>
+<div>
+    <h4>İletişim</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmbedCode)
+        </dt>
+
+        <dd>
+            @Model.EmbedCode  </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Sil" class="btn btn-default" /> |
+        @Html.ActionLink("Geri Gel", "Index")
+
+    </div>
+    }
+</div>

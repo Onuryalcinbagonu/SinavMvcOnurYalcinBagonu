@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SinavMvcOnurYalcinBagonu.Models.Categories>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+    int saa = 1;
+}
+
+
+
+
+<div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+    <div class="panel-heading">
+
+        <button type="button" class="btn btn_5 btn-lg btn-warning warning_11">Kategoriler</button>
+        <button type="button" class="btn btn_5 btn-lg btn-default">  @Html.ActionLink("Yeni Ekle", "Create")</button>
+
+        <div class="panel-ctrls" data-actions-container="" data-action-collapse="{&quot;target&quot;: &quot;.panel-body&quot;}"><span class="button-icon has-bg"><i class="ti ti-angle-down"></i></span></div>
+    </div>
+    <div class="panel-body no-padding" style="display: block;">
+        <table class="table table-striped">
+            <thead>
+                <tr class="warning">
+                    <th>#</th>
+                    <th>        </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+
+                    <th>        </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.Label(Convert.ToString(saa))
+
+                    </td>
+                    <td>       </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Düzenle", "Edit", new { id = item.CategoryId }) |
+                        @Html.ActionLink("Detay", "Details", new { id = item.CategoryId }) |
+                        @Html.ActionLink("Sil", "Delete", new { id = item.CategoryId })
+                    </td>
+                </tr>
+                    saa++;
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+

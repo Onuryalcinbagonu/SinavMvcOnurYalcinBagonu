@@ -1,0 +1,35 @@
+﻿@model IEnumerable<SinavMvcOnurYalcinBagonu.Models.Referances>
+@{
+    ViewBag.Title = "Referance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <!--/.get-started-->
+    <br /><br /><br /><br /><br /><br />
+    <div class="clients-area center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+
+        <h2>Referanslar</h2>
+
+    </div>
+
+    <div class="row">
+        @foreach (var item in Model.ToList())
+        {<div class="col-md-4 wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                <div class="clients-comments text-center">
+
+                    <img src="@item.Image" class="img-circle" alt="">
+                    <h3>@item.RefName</h3>
+                    <h4>@item.Title</h4>
+                </div>
+            </div>}
+
+    </div>    <br />
+    <br />
+    <br /><br />
+    <br />
+    <br />
+    <br />
+    &nbsp;
+</div>
+

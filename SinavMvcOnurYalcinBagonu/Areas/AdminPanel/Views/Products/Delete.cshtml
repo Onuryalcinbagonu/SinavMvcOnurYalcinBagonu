@@ -1,0 +1,68 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.Products
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Ürün Sil</h2>
+
+<h3>Simek İsteğinizden Emin Misiniz?</h3>
+
+<div>
+    <h4>Ürün</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Description.Replace("<br/>", Environment.NewLine))
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categories.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categories.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Geri Gel", "Index")
+        </div>
+    }
+</div>

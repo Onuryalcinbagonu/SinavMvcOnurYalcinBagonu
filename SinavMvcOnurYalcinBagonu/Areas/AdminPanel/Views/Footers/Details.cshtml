@@ -1,0 +1,51 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.Footer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Alt Banner Detay</h2>
+
+<div>
+    <h4>Alt Banner </h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SocialMediaActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SocialMediaActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FacebookUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FacebookUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TwiterUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TwiterUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkypeUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkypeUrl)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.FooterId }) |
+          @Html.ActionLink("Geri Gel", "Index")
+</p>

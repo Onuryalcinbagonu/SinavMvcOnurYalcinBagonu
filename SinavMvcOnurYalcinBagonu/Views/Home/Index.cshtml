@@ -1,0 +1,34 @@
+﻿@model  SinavMvcOnurYalcinBagonu.Models.Home
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="feature">
+    <!--/.container-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                <div class="skill">
+          
+                        <h2>@Model.DescriptionOneTitle</h2>
+                           @Html.Raw(Model.DescriptionOne.Replace("<br>",Environment.NewLine))
+                    
+                </div>
+
+            </div><!--/.col-sm-6-->
+
+            <div class="col-sm-6 wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                <div class="accordion">
+                   
+                        <h2>@Model.DescriptionTwoTitle</h2>
+                        @Html.Raw(Model.DescriptionTwo.Replace("<br/>",Environment.NewLine))
+                  
+                    <!--/#accordion1-->
+                </div>
+            </div>
+
+        </div><!--/.row-->
+    </div>
+</section>
+

@@ -1,0 +1,36 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.About
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımızda Detay</h2>
+
+<div>
+    <h4>Hakkımızda</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AboutTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AboutTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Description.Replace("<br/>", Environment.NewLine)) <!--alt satıra geçir br gördüğünde-->
+
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.AboutId }) |
+    @Html.ActionLink("Geri Gel", "Index")
+</p>

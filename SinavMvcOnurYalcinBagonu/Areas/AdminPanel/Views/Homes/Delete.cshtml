@@ -1,0 +1,67 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.Home
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Ana Sayfa Sil</h2>
+
+<h3>Simek İsteğinizden Emin Misiniz?</h3>
+
+<div>
+    <h4>Ana Sayfa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LogoImgUrl)
+        </dt>
+
+        <dd>
+            <img src="@Model.LogoImgUrl" width="100" height="100" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionOneTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionOneTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionOne)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionOne)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionTwoTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionTwoTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionTwo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionTwo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Geri Gel", "Index")
+        </div>
+    }
+</div>

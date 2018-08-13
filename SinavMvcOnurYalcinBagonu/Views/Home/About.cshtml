@@ -1,0 +1,23 @@
+﻿@model SinavMvcOnurYalcinBagonu.Models.About
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="about-us">
+    <div class="container">
+        <div class="skill-wrap clearfix">
+            <div class="center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                <h2 align="center">@Model.AboutTitle</h2>
+                @Html.Raw(Model.Description.Replace("<br/>", Environment.NewLine))
+
+            </div>
+
+
+        </div>
+
+        <!-- our-team -->
+        <!--section-->
+    </div><!--/.container-->
+</section>
+

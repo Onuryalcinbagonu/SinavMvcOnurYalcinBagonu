@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SinavMvcOnurYalcinBagonu.Models.Products>
+@{
+
+    ViewBag.Title = "Ürünler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="portfolio">
+
+
+    <div class="container">
+        <div class="center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+            <h2><b>Ürünler</b></h2>
+        </div>
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+
+        <div class="col-xs-4 " style="margin-bottom:30px;">
+            <div class="recent-work-wrap">
+                <img class="img-responsive" src="@item.Image" alt="">
+                <div class="overlay">
+                    <div class="recent-work-inner">
+                        <h3 align="center"><a href="#">@item.Name</a> </h3>
+                        <p > @Html.Raw(item.Description.Replace("<br/>", Environment.NewLine)) </p>
+                        <a class="preview" href="#" rel="prettyPhoto"><b>Fiyat = </b>@Html.Raw(item.Price) ₺ </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            }
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</section>
+

@@ -1,0 +1,68 @@
+﻿<nav class="top1 navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Onurun Paneli</a>
+    </div>
+    <!-- /.navbar-header -->
+    <ul class="nav navbar-nav navbar-right">
+        
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="~/Areas/AdminPanel/Content/images/1.png"></a>
+            <ul class="dropdown-menu">
+         
+           
+                <li class="m_2"><a href="@Url.Action("Logout","Users","AdminPanel")"><i class="fa fa-lock"></i> Çıkış</a></li>
+            </ul>
+        </li>
+    </ul>
+    
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+                <li>
+                    <a href="@Url.Action("Index","Categories")"><i class="fa fa-indent nav_icon"></i>Kategoriler</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Products")"><i class="fa fa-indent nav_icon"></i>Ürünler</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-laptop nav_icon"></i>Sayfalar<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="@Url.Action("Index","Homes")">Ana Sayfa</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Abouts")">Hakımda</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Referances")">Referanslar</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Contacts")">İletişim</a>
+                        </li>
+
+
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Sliders")"><i class="fa fa-indent nav_icon"></i>Slider</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Footers")"><i class="fa fa-indent nav_icon"></i>Alt Banner</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","UsersAdmin")"><i class="fa fa-indent nav_icon"></i>Kullanıcılar</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>

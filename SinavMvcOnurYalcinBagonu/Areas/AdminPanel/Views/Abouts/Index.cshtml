@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SinavMvcOnurYalcinBagonu.Models.About>
+
+@{
+   
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
+    
+}
+
+
+
+<p>
+    @if (Model.Count() < 1)
+    {
+        @Html.ActionLink("Yeni Ekle", "Create")
+    }
+
+</p>
+
+
+
+<div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+    <div class="panel-heading">
+
+        <button type="button" class="btn btn_5 btn-lg btn-warning warning_11">Hakkımızda</button>
+        <button type="button" class="btn btn_5 btn-lg btn-default">
+            @if (Model.Count() < 1)
+            {@Html.ActionLink("Yeni Ekle", "Create")  }
+        </button>
+
+        <div class="panel-ctrls" data-actions-container="" data-action-collapse="{&quot;target&quot;: &quot;.panel-body&quot;}"><span class="button-icon has-bg"><i class="ti ti-angle-down"></i></span></div>
+    </div>
+    <div class="panel-body no-padding" style="display: block;">
+        <table class="table table-striped">
+            <thead>
+                <tr class="warning">
+                    <th>#</th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AboutTitle)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>        </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                          #
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AboutTitle)
+                        </td>
+                        <td>
+                            @Html.Raw(item.Description.Replace("<br/>", Environment.NewLine))
+                        </td>
+
+                        <td class="col-md-2">
+                            @Html.ActionLink("Düzenle", "Edit", new { id = item.AboutId }) |
+                            @Html.ActionLink("Detay", "Details", new { id = item.AboutId }) |
+                            @Html.ActionLink("Sil", "Delete", new { id = item.AboutId })
+                        </td>
+                    </tr>
+                
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+

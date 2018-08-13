@@ -1,0 +1,58 @@
+﻿@model  IEnumerable<SinavMvcOnurYalcinBagonu.Models.Categories>
+@{
+    ViewBag.Title = "Urunler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+  
+}
+
+<section id="about-us">
+    <div class="container">
+        <div class="skill-wrap clearfix">
+            <div class="center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                <h2>Kategoriler</h2>
+
+            </div>
+
+
+            @foreach (var item in Model)
+        {
+
+            if (item.Products == null || item.Products.Count == 0)
+            {
+                continue;
+
+            }
+
+            <div class="row">
+
+                <div class="col-sm-3">
+                    <div class="sinlge-skill wow fadeInDown animated" data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: fadeInDown;">
+                        <div class="joomla-skill">
+
+                            <p><a href="@Url.Action("Productt", "Home", new { id = item.CategoryId })">Bir Tık</a></p>
+                            <p>@item.Name</p>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+
+    }
+        </div>
+        <br />
+        <br />
+        <br /><br />
+        <br />
+        <br />
+        <br />
+    
+    </div><!--/.container-->
+</section>
+
